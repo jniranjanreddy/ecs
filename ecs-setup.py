@@ -5,7 +5,6 @@ import platform
 def Clear():
     cls = ("clear")
     os.system(cls)
-Clear()
 
 ARGUMENT = sys.argv[1]
 if ARGUMENT == "apply":
