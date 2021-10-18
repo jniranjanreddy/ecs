@@ -9,7 +9,7 @@ def Clear():
 ARGUMENT = sys.argv[1]
 if ARGUMENT == "apply":
     Clear()
-    print("Sit back and Relax ECS Cluster is being Deployed !!")
+    print("Sit back and Relax ECS infrastructure is being Deployed !!")
     infra = ("aws cloudformation create-stack \
         --capabilities CAPABILITY_IAM \
         --stack-name ecs-core-infrastructure \
@@ -17,7 +17,7 @@ if ARGUMENT == "apply":
     platform.os.system(infra)
 elif ARGUMENT == "destroy":
     Clear()
-    print("!! Sit back and Relax ECS Cluster is being Destroyed !!")
+    print("!! Sit back and Relax ECS infrastructure is being Destroyed !!")
     delete = ("aws cloudformation delete-stack --stack-name ecs-core-infrastructure")
     platform.os.system(delete)
     
