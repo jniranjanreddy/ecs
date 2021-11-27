@@ -57,3 +57,60 @@ Delete fargate Cluster:-
 }
 (my-py3-env) [root@minikube01 python-flask-training]#
 ```
+Create task
+```
+[root@minikube01 ecs]# aws ecs register-task-definition --cli-input-json file:///jnr/ecs/sleep360.json
+{
+    "taskDefinition": {
+        "taskDefinitionArn": "arn:aws:ecs:ap-south-1:936766936551:task-definition/sleep360:1",
+        "containerDefinitions": [
+            {
+                "name": "sleep",
+                "image": "busybox",
+                "cpu": 10,
+                "memory": 10,
+                "portMappings": [],
+                "essential": true,
+                "command": [
+                    "sleep",
+                    "360"
+                ],
+                "environment": [],
+                "mountPoints": [],
+                "volumesFrom": []
+            }
+        ],
+        "family": "sleep360",
+        "revision": 1,
+        "volumes": [],
+        "status": "ACTIVE",
+        "placementConstraints": [],
+        "compatibilities": [
+            "EXTERNAL",
+            "EC2"
+        ],
+        "registeredAt": "2021-11-27T12:09:10.249000-05:00",
+        "registeredBy": "arn:aws:iam::936766936551:root"
+    }
+}
+```
+```
+[root@minikube01 ecs]# cat sleep360.json
+{
+    "containerDefinitions": [
+        {
+            "name": "sleep",
+            "image": "busybox",
+            "cpu": 10,
+            "command": [
+                "sleep",
+                "360"
+            ],
+            "memory": 10,
+            "essential": true
+        }
+    ],
+    "family": "sleep360"
+}
+
+```
