@@ -114,3 +114,12 @@ Create task
 }
 
 ```
+```
+[root@minikube01 ecs]# aws ecs list-task-definitions
+{
+    "taskDefinitionArns": [
+        "arn:aws:ecs:ap-south-1:936766936551:task-definition/sleep360:1"
+    ]
+}
+
+```
