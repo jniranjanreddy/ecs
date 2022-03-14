@@ -132,4 +132,11 @@ Create task
     ]
 }
 
+[root@minikube01 ecs]# aws ecs list-clusters
+{
+    "clusterArns": [
+        "arn:aws:ecs:ap-south-1:101805901231:cluster/dev-cluster"
+    ]
+}
+
 ```
