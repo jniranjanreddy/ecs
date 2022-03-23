@@ -1,5 +1,5 @@
 # ecs Prerequisites
-Source: 
+Source: https://www.udemy.com/course/aws-ecs-fargate/learn/lecture/20611074#overview
 ```
 #append to .bashrc
 parse_git_branch() {
