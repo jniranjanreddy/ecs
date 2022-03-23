@@ -1,5 +1,5 @@
 # ecs Prerequisites
-
+Source: 
 ```
 #append to .bashrc
 parse_git_branch() {
@@ -10,10 +10,11 @@ export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] # "
 
 ```
 What roles required for ECS.
-1. EC2Role
-2. ECSRole
-3. ECSTaskExecutionRole
-4. AutoscalingRole
+1. EC2Role - Allows the ECS agent on the ec2 hosts to communicate with ECS and ECR
+   IAM->Roles->Elastic container service->
+2. ECSRole - role which authorizes ECS to manage resources on your behalf.
+3. ECSTaskExecutionRole - role attached to the ECS Tasks
+4. AutoscalingRole - used to allow AWS Autoscaling to inspect stats and adjust scalable targets
 ```
 Create Fargate Cluster: -
 ```
